@@ -22,5 +22,7 @@ window.addEventListener("keydown", (e) => {
         app.stage.removeChild(sprite)
         sprite = PIXI.Sprite.from('placeholder0.png')
     }
+    sprite.x = 640
+    sprite.y = 360
     app.stage.addChild(sprite)
 })
