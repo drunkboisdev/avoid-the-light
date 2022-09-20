@@ -4,6 +4,10 @@ document.body.appendChild(app.view)
 let sprite = PIXI.Sprite.from('placeholder0.png')
 app.stage.addChild(sprite)
 
+window.addEventListener("keydown", (e) => {
+    console.log(e.key)
+})
+
 let elapsed = 0.0
 app.ticker.add((delta) => {
   elapsed += delta
