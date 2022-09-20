@@ -1,6 +1,18 @@
 let app = new PIXI.Application({ width: 1280, height: 720 })
 document.body.appendChild(app.view)
 
+let bg = new Container()
+
+for (let i = 0; i < 64; i++) {
+    for (let j = 0; j < 36; j++) {
+        const bgTile = new PIXI.Sprite('placeholder4.png');
+        bgTile.anchor.set(0.5);
+        bgTile.x = i * 20;
+        bgTile.y = j * 20;
+        container.addChild(bgTile);
+    }
+}
+
 let sprite = PIXI.Sprite.from('placeholder0.png')
 sprite.anchor.set(0.5)
 sprite.x = 640
