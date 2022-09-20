@@ -10,7 +10,7 @@ for (let i = 0; i < 64; i++) {
         bgTile.anchor.set(0.5);
         bgTile.x = i * 20;
         bgTile.y = j * 20;
-        container.addChild(bgTile);
+        bg.addChild(bgTile);
     }
 }
 
