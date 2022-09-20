@@ -8,12 +8,13 @@ window.addEventListener("keydown", (e) => {
     if (e.key === "ArrowRight" || e.key === "d") {
         sprite = PIXI.Sprite.from('placeholder3.png')
     } else if (e.key === "ArrowDown" || e.key === "s") {
-        sprite = PIXI.Sprite.from('placeholder3.png')
+        sprite = PIXI.Sprite.from('placeholder2.png')
     } else if (e.key === "ArrowLeft" || e.key === "a") {
-        sprite = PIXI.Sprite.from('placeholder3.png')
+        sprite = PIXI.Sprite.from('placeholder1.png')
     } else if (e.key === "ArrowUp" || e.key === "w") {
-        sprite = PIXI.Sprite.from('placeholder3.png')
+        sprite = PIXI.Sprite.from('placeholder0.png')
     }
+    app.stage.addChild(sprite)
 })
 
 let elapsed = 0.0
