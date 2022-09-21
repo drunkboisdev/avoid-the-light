@@ -20,14 +20,15 @@ sprite.y = 360
 app.stage.addChild(sprite)
 
 window.addEventListener("keydown", (e) => {
+    let time = 0
     // there's probably a better way to do this
     if (e.key === "ArrowRight" || e.key === "d") {
         app.stage.removeChild(sprite)
         sprite = PIXI.Sprite.from('placeholder3.png')
-        let prevBGX = bg.x
         app.ticker.add(delta => {
             bg.x -= 1
-            if (delta > 19) {
+            time += delta
+            if (time > 19) {
                 ticker.remove(delta)
             }
         })
@@ -49,4 +50,5 @@ window.addEventListener("keydown", (e) => {
     sprite.x = 640
     sprite.y = 360
     app.stage.addChild(sprite)
+    time = 0
 })
