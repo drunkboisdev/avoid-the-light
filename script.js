@@ -24,6 +24,13 @@ window.addEventListener("keydown", (e) => {
     if (e.key === "ArrowRight" || e.key === "d") {
         app.stage.removeChild(sprite)
         sprite = PIXI.Sprite.from('placeholder3.png')
+        let prevBGX = bg.x
+        app.ticker.add(delta => {
+            bg.x -= 1
+            if (delta > 19) {
+                ticker.remove(delta)
+            }
+        })
         bg.x -= 20
     } else if (e.key === "ArrowUp" || e.key === "w") {
         app.stage.removeChild(sprite)
