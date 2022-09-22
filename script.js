@@ -19,33 +19,40 @@ sprite.x = 640
 sprite.y = 360
 app.stage.addChild(sprite)
 
+let time = 0
+
+function animateBG(speed, direction) {
+    if (time < 20) {
+        requestAnimationFrame(animateBG(speed, direction))
+    }
+    time++
+
+    if (direction === "x") {
+        bg.x += speed
+    } else if (direction === "y") {
+        bg.y += speed
+    }
+}
+
 window.addEventListener("keydown", (e) => {
     let time = 0
     // there's probably a better way to do this
     if (e.key === "ArrowRight" || e.key === "d") {
         app.stage.removeChild(sprite)
         sprite = PIXI.Sprite.from('placeholder3.png')
-        app.ticker.add(delta => {
-            bg.x -= 1
-            time += delta
-            if (time > 19) {
-                app.ticker.remove(delta)
-                time = 0
-            }
-        })
-        bg.x -= 20
+        animateBG(-1, "x")
     } else if (e.key === "ArrowUp" || e.key === "w") {
         app.stage.removeChild(sprite)
         sprite = PIXI.Sprite.from('placeholder2.png')
-        bg.y -= 20
+        animateBG(-1, "y")
     } else if (e.key === "ArrowLeft" || e.key === "a") {
         app.stage.removeChild(sprite)
         sprite = PIXI.Sprite.from('placeholder1.png')
-        bg.x += 20
+        animateBG(1, "x")
     } else if (e.key === "ArrowDown" || e.key === "s") {
         app.stage.removeChild(sprite)
         sprite = PIXI.Sprite.from('placeholder0.png')
-        bg.y += 20
+        animateBG(1, "y")
     }
     sprite.anchor.set(0.5)
     sprite.x = 640
