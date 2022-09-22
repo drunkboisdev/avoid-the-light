@@ -6,7 +6,13 @@ app.stage.addChild(bg)
 
 for (let i = -16; i < 80; i++) {
     for (let j = -9; j < 45; j++) {
-        const bgTile = new PIXI.Sprite.from('placeholder4.png');
+        let rand = Math.random()
+        let bgTile
+        if (rand < 0.5) {
+            bgTile = new PIXI.Sprite.from('placeholder4.png');
+        } else {
+            bgTile = new PIXI.Sprite.from('placeholder5.png');
+        }
         bgTile.x = i * 20;
         bgTile.y = j * 20;
         bg.addChild(bgTile);
