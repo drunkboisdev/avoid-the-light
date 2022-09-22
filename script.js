@@ -30,6 +30,7 @@ window.addEventListener("keydown", (e) => {
             time += delta
             if (time > 19) {
                 ticker.remove(delta)
+                time = 0
             }
         })
         bg.x -= 20
@@ -50,5 +51,4 @@ window.addEventListener("keydown", (e) => {
     sprite.x = 640
     sprite.y = 360
     app.stage.addChild(sprite)
-    time = 0
 })
