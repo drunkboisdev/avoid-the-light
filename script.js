@@ -29,7 +29,7 @@ window.addEventListener("keydown", (e) => {
             bg.x -= 1
             time += delta
             if (time > 19) {
-                ticker.remove(delta)
+                app.ticker.remove(delta)
                 time = 0
             }
         })
